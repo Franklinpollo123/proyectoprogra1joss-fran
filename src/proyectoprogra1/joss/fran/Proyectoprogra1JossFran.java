@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package proyectoprogra1.joss.fran;
-
+import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author frankyjos
