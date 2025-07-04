@@ -6,7 +6,7 @@ package proyectoprogra1.joss.fran;
 
 /**
  *
- * @author frank
+ * @author frankyjos
  */
 public class Proyectoprogra1JossFran {
 
@@ -14,7 +14,7 @@ public class Proyectoprogra1JossFran {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // Prueba Commit
     }
     
 }
