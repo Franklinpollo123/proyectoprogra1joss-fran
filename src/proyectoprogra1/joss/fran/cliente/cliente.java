@@ -72,6 +72,14 @@ public class cliente {
         return "cliente{" + "id=" + id + ", ticket=" + ticket + ", prioridad=" + prioridad + ", tiempoTransaccion=" + tiempoTransaccion + "minutos"+ ", tiempoTolerancia=" + tiempoTolerancia + "minutos"+ ", tiempoEnFila=" + tiempoEnFila + '}';
     }
 
+    void incrementarTiempoEnFila() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    boolean superoTolerancia() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     
     
     

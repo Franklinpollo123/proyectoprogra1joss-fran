@@ -2,7 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package proyectoprogra1.joss.fran;
+
+package proyectoprogra1.joss.fran.cliente;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,10 +15,10 @@ public class caja {
     // creamos as varibale 
     private final int id;
     private final boolean paraPlataformas;
-    private final List<Cliente> datosDelClientes;
+    private final List<cliente> datosDelClientes;
     private int tiempoOcupado;
 
-    public caja(int id, boolean paraPlataformas, List<Cliente> datosDelClientes, int tiempoOcupado) {
+    public caja(int id, boolean paraPlataformas, List<cliente> datosDelClientes, int tiempoOcupado) {
         this.id = id;
         this.paraPlataformas = paraPlataformas;
         this.datosDelClientes =  new ArrayList<>();
@@ -32,7 +33,7 @@ public class caja {
         return paraPlataformas;
     }
 
-    public List<Cliente> getDatosDelClientes() {
+    public List<cliente> getDatosDelClientes() {
         return datosDelClientes;
     }
 
@@ -53,7 +54,7 @@ public class caja {
        public String getHistorialTexto() {
         StringBuilder sb = new StringBuilder();
         sb.append("Caja ").append(id).append(esPlataforma ? " (Plataforma)\n" : "\n");
-        for (Cliente c : historialClientes) {
+        for (cliente c : historialClientes) {
             sb.append("  ").append(c.getTicket())
               .append(" - Esperó: ").append(c.getTiempoEnFila()).append(" min\n");
         }
