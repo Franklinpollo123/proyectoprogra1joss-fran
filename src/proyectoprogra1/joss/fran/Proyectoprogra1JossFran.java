@@ -5,6 +5,7 @@
 package proyectoprogra1.joss.fran;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import proyectoprogra1.joss.fran.cliente.caja;
 import proyectoprogra1.joss.fran.cliente.fila;
 /**
@@ -27,7 +28,19 @@ public class Proyectoprogra1JossFran {
         cajas.add(new caja(6, true)); // Caja de plataforma
 
         boolean salir = false;
+        while (!salir) {
+            String opcion = JOptionPane.showInputDialog(
+                    """
+                    --- MENÚ PRINCIPAL ---
+                    1. Registrar un nuevo cliente
+                    2. Ver clientes en la fila actual
+                    3. Avanzar tiempo (atención)
+                    4. Ver clientes no atendidos
+                    5. Ver reportes por caja
+                    6. Salir
+                    Ingrese una opción:
+                    """);
+        }
     }
-    
 }
 
