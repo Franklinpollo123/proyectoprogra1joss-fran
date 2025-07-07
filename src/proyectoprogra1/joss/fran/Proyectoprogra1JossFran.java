@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import proyectoprogra1.joss.fran.cliente.caja;
+import proyectoprogra1.joss.fran.cliente.cliente;
 import proyectoprogra1.joss.fran.cliente.fila;
 /**
  *
@@ -17,6 +18,10 @@ public class Proyectoprogra1JossFran {
     /**
      * @param args the command line arguments
      */
+    private static boolean confirmar(String pregunta) {
+        int r = JOptionPane.showConfirmDialog(null, pregunta, "Confirmar", JOptionPane.YES_NO_OPTION);
+        return r == JOptionPane.YES_OPTION;
+    }
     public static void main(String[] args) {
         fila fila = new fila();
 
@@ -26,7 +31,8 @@ public class Proyectoprogra1JossFran {
             cajas.add(new caja(i, false));
         }
         cajas.add(new caja(6, true)); // Caja de plataforma
-
+        //método confirmar para las opciones del menú
+        
         boolean salir = false;
         while (!salir) {
             String opcion = JOptionPane.showInputDialog(
@@ -40,6 +46,28 @@ public class Proyectoprogra1JossFran {
                     6. Salir
                     Ingrese una opción:
                     """);
+            
+            if (opcion == null) break;
+
+            switch (opcion) {
+                case "1" -> {
+                    boolean adultoMayor = confirmar("¿Es adulto mayor?");
+                    boolean embarazada = confirmar("¿Es embarazada o con niño en brazos?");
+                    boolean discapacidad = confirmar("¿Tiene alguna discapacidad?");
+                    boolean multiples = confirmar("¿Tiene múltiples asuntos?");
+                    boolean plataforma = confirmar("¿Es un trámite exclusivo de Plataforma?");
+                    String generoStr = JOptionPane.showInputDialog("¿Género? (F/M):");
+                    if (generoStr == null || generoStr.isEmpty()) break;
+                    char genero = generoStr.toUpperCase().charAt(0);
+
+                    cliente c = new cliente(adultoMayor, embarazada, discapacidad, multiples, plataforma, genero);
+                    if (fila.agregarCliente(c)) {
+                        JOptionPane.showMessageDialog(null, "Cliente agregado:\n" + c);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "La fila está llena. No se puede agregar más clientes.");
+                    }
+                }
+            }
         }
     }
 }
