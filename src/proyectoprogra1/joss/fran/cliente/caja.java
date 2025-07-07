@@ -12,7 +12,7 @@ import java.util.List;
  * @author frank y joss
  */
 public class caja {
-    // creamos as varibale 
+    // creamos las variables
     private final int id;
     private final boolean paraPlataformas;
     private final List<cliente> datosDeClientes;
@@ -23,6 +23,13 @@ public class caja {
         this.paraPlataformas = paraPlataformas;
         this.datosDeClientes =  new ArrayList<>();
         this.tiempoOcupado = tiempoOcupado;
+    }
+    //Constructor que usamos en el main
+    public caja (int id, boolean paraPlataformas){
+    this.id=id;
+    this.paraPlataformas = paraPlataformas;
+    this.datosDeClientes = new ArrayList<>();
+    this.tiempoOcupado=0;
     }
 public void atenderCliente(cliente c) {
         datosDeClientes.add(c);
