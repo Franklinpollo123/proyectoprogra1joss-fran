@@ -15,14 +15,21 @@ public class caja {
     // creamos as varibale 
     private final int id;
     private final boolean paraPlataformas;
-    private final List<cliente> datosDelClientes;
+    private final List<cliente> datosDeClientes;
     private int tiempoOcupado;
 
-    public caja(int id, boolean paraPlataformas, List<cliente> datosDelClientes, int tiempoOcupado) {
+    public caja(int id, boolean paraPlataformas, List<cliente> datosDeClientes, int tiempoOcupado) {
         this.id = id;
         this.paraPlataformas = paraPlataformas;
-        this.datosDelClientes =  new ArrayList<>();
+        this.datosDeClientes =  new ArrayList<>();
         this.tiempoOcupado = tiempoOcupado;
+    }
+public void atenderCliente(cliente c) {
+        datosDeClientes.add(c);
+        tiempoOcupado += c.getTiempoTransaccion();
+    }
+ public int getClientesAtendidos() {
+        return datosDeClientes.size();
     }
 
     public int getId() {
@@ -33,28 +40,28 @@ public class caja {
         return paraPlataformas;
     }
 
-    public List<cliente> getDatosDelClientes() {
-        return datosDelClientes;
+    public List<cliente> getDatosDeClientes() {
+        return datosDeClientes;
     }
 
     public int getTiempoOcupado() {
-        return tiempoOcupado;
-        if(historialClientes.isEmpty())
-            return 0.0;
+       if (datosDeClientes.isEmpty()) return (int) 0.0;
         int totalEspera = 0;
-        for (Cliente c : historialClientes){
-            totalEspera +=c.gettiempofila();
+        for (cliente c : datosDeClientes) {
+            totalEspera += c.getTiempoEnFila();
         }
-        return (double) totalEspera /historialClientes.size();
+        return (int) ((double) totalEspera /datosDeClientes.size());
     }
    public String getResumen(){
-      return "caja " + id +(paraPlataformas "Plataformas" : "")+ "\n  Clientes atendidos: " + getClientesAtendidos() +
-                "\n  Promedio de espera: " + String.format("%.2f", getPromedioEspera()) + " min\n";
-   }
+       return "Caja " + id +
+                (paraPlataformas ? " (Plataforma)" : "") +
+                "\n  Clientes atendidos: " + getClientesAtendidos() +
+                "\n  Promedio de espera: " + String.format("%.2f", getTiempoOcupado()) + " min\n";
+    }
        public String getHistorialTexto() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Caja ").append(id).append(esPlataforma ? " (Plataforma)\n" : "\n");
-        for (cliente c : historialClientes) {
+        sb.append("Caja ").append(id).append(paraPlataformas ? " (Plataforma)\n" : "\n");
+        for (cliente c : datosDeClientes) {
             sb.append("  ").append(c.getTicket())
               .append(" - Esperó: ").append(c.getTiempoEnFila()).append(" min\n");
         }
