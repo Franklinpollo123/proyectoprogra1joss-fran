@@ -67,6 +67,7 @@ public class Proyectoprogra1JossFran {
                         JOptionPane.showMessageDialog(null, "La fila está llena. No se puede agregar más clientes.");
                     }
                 }
+                case "2" -> JOptionPane.showMessageDialog(null, fila.mostrarFila());
             }
         }
     }
