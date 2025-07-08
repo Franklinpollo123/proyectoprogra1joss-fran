@@ -68,6 +68,23 @@ public class Proyectoprogra1JossFran {
                     }
                 }
                 case "2" -> JOptionPane.showMessageDialog(null, fila.mostrarFila());
+                case "3" -> {
+                    fila.avanzarTiempo();
+
+                    for (int i = 0; i < 5; i++) {
+                        cliente siguiente = fila.siguienteGeneral();
+                        if (siguiente != null) {
+                            cajas.get(i).atenderCliente(siguiente);
+                        }
+                    }
+
+                    cliente plataforma = fila.siguientePlataforma();
+                    if (plataforma != null) {
+                        cajas.get(5).atenderCliente(plataforma);
+                    }
+
+                    JOptionPane.showMessageDialog(null, "Simulación ejecutada. Tiempo avanzado y clientes atendidos.");
+                }
             }
         }
     }
