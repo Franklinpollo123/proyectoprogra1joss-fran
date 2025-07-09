@@ -97,8 +97,23 @@ public class Proyectoprogra1JossFran {
                         JOptionPane.showMessageDialog(null, sb.toString());
                     }
                 }
+                case "5" -> {
+                    StringBuilder reporte = new StringBuilder("--- Reportes por Caja ---\n\n");
+                    for (caja caja : cajas) {
+                        reporte.append(caja.getResumen()).append("\n");
+                        reporte.append(caja.getHistorialTexto()).append("\n");
+                    }
+                    reporte.append("Total no atendidos: ").append(fila.getNoAtendidos().size());
+                    JOptionPane.showMessageDialog(null, reporte.toString());
+                }
+
+                case "6" -> salir = true;
+
+                default -> JOptionPane.showMessageDialog(null, "Opción inválida.");
             }
         }
+
+        JOptionPane.showMessageDialog(null, "¡Gracias por usar el sistema!");
     }
 }
 
