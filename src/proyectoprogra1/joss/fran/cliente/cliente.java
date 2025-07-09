@@ -75,8 +75,8 @@ public class cliente {
      // Devuelve en texto la info del cliente
     @Override
     public String toString() {
-        return "cliente{" + "id=" + id + ", ticket=" + ticket + ", prioridad=" + prioridad +
-                ", tiempoTransaccion=" + tiempoTransaccion + "minutos"+ ", tiempoTolerancia=" + tiempoTolerancia +
-                "minutos"+ ", tiempoEnFila=" + tiempoEnFila + '}';
+        return "cliente{" + "ID=" + id + ", Ticket=" + ticket + ", Prioridad=" + prioridad +
+                ", Tiempo Transaccion=" + tiempoTransaccion + "min"+ ", Tiempo de Tolerancia=" + tiempoTolerancia +
+                "min"+ ", Tiempo en fila=" + tiempoEnFila + '}';
     } 
 }
