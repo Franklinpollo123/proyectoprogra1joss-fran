@@ -17,13 +17,14 @@ public class caja {
     private final boolean paraPlataformas;
     private final List<cliente> datosDeClientes;
     private int tiempoOcupado;
-
+/* No se está usando por el momento:
     public caja(int id, boolean paraPlataformas, List<cliente> datosDeClientes, int tiempoOcupado) {
         this.id = id;
         this.paraPlataformas = paraPlataformas;
         this.datosDeClientes =  new ArrayList<>();
         this.tiempoOcupado = tiempoOcupado;
     }
+*/ 
     //Constructor que usamos en el main
     public caja (int id, boolean paraPlataformas){
     this.id=id;
@@ -50,7 +51,10 @@ public void atenderCliente(cliente c) {
     public List<cliente> getDatosDeClientes() {
         return datosDeClientes;
     }
-
+/**
+     * Método que devuelve el promedio de tiempo de espera de los clientes atendidos,
+     * aunque el nombre se mantiene como getTiempoOcupado por claridad en el proyecto.
+     */
     public int getTiempoOcupado() {
        if (datosDeClientes.isEmpty()) return (int) 0.0;
         int totalEspera = 0;
@@ -63,7 +67,7 @@ public void atenderCliente(cliente c) {
        return "Caja " + id +
                 (paraPlataformas ? " (Plataforma)" : "") +
                 "\n  Clientes atendidos: " + getClientesAtendidos() +
-                "\n  Promedio de espera: " + String.format("%.2f", getTiempoOcupado()) + " min\n";
+                "\n  Promedio de espera: " + String.format("%.2f",(double) getTiempoOcupado()) + " min\n";
     }
        public String getHistorialTexto() {
         StringBuilder sb = new StringBuilder();
