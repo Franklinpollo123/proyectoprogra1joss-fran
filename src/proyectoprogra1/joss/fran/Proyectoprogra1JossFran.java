@@ -51,10 +51,10 @@ public class Proyectoprogra1JossFran {
 
             switch (opcion) {
                 case "1" -> {
-                    boolean adultoMayor = confirmar("¿Es adulto mayor?");
-                    boolean embarazada = confirmar("¿Es embarazada o con niño en brazos?");
-                    boolean discapacidad = confirmar("¿Tiene alguna discapacidad?");
-                    boolean multiples = confirmar("¿Tiene múltiples asuntos?");
+                    boolean adultoMayor = confirmar("¿Es una persona adulta mayor?");
+                    boolean embarazada = confirmar("¿Es una mujer embarazada/Lleva un niño en brazos?");
+                    boolean discapacidad = confirmar("¿Presenta alguna discapacidad?");
+                    boolean multiples = confirmar("¿Ocupa tratar múltiples asuntos con el banco?");
                     boolean plataforma = confirmar("¿Es un trámite exclusivo de Plataforma?");
                     String generoStr = JOptionPane.showInputDialog("¿Género? (F/M):");
                     if (generoStr == null || generoStr.isEmpty()) break;
