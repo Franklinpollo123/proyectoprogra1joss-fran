@@ -85,6 +85,18 @@ public class Proyectoprogra1JossFran {
 
                     JOptionPane.showMessageDialog(null, "Simulación ejecutada. Tiempo avanzado y clientes atendidos.");
                 }
+                case "4" -> {
+                    List<cliente> noAtendidos = fila.getNoAtendidos();
+                    if (noAtendidos.isEmpty()) {
+                        JOptionPane.showMessageDialog(null, "No hay clientes que se hayan retirado.");
+                    } else {
+                        StringBuilder sb = new StringBuilder("Clientes que se retiraron sin ser atendidos:\n");
+                        for (cliente c : noAtendidos) {
+                            sb.append(c).append("\n");
+                        }
+                        JOptionPane.showMessageDialog(null, sb.toString());
+                    }
+                }
             }
         }
     }
